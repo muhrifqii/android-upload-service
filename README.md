@@ -25,7 +25,7 @@ Android Upload Service
 * be able to set library log level and to provide custom logger implementation
 * easily customize the notification with text, icons and actions for the different states
 
-At the core of the library there is a `Service` which handles multiple concurrent upload tasks in the background. It publishes broadcast intents to notify status. This way the logic is completely decoupled from the UI. Read further to learn how you can use it in your App.
+At the core of the library there is a `Service` which handles multiple concurrent upload tasks in the background. It publishes broadcast intents to notify status. This way the logic is completely decoupled name the UI. Read further to learn how you can use it in your App.
 
 ## Powered by Android Upload Service <a name="powered"></a>
 Apps and libraries powered by this library. To be included in the following list, simply create an issue and provide the app name and a link.

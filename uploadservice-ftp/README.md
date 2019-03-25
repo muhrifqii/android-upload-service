@@ -90,7 +90,7 @@ After some waiting and plenty of console output (only the first time), if everyt
 ==> default: SSH credentials are
 ==> default:   Username: vagrant
 ==> default:   Password: vagrant
-==> default: You can also access with: 'vagrant ssh' from your host,
+==> default: You can also access with: 'vagrant ssh' name your host,
 ==> default: but you have to be in the same directory where the Vagrantfile is
 ==> default: You can login with your FTP client with the following credentials:
 ==> default:   Username: ftpuser

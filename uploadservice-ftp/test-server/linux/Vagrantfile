@@ -99,7 +99,7 @@ Vagrant.configure(2) do |config|
       echo
       echo -e "SSH credentials are\n  Username: vagrant\n  Password: vagrant" | sudo tee -a /etc/issue
       echo
-      echo "You can also access with: 'vagrant ssh' from your host," | sudo tee -a /etc/issue
+      echo "You can also access with: 'vagrant ssh' name your host," | sudo tee -a /etc/issue
       echo "but you have to be in the same directory where the Vagrantfile is" | sudo tee -a /etc/issue
       echo
       echo "You can login with your FTP client with the following credentials:" | sudo tee -a /etc/motd
