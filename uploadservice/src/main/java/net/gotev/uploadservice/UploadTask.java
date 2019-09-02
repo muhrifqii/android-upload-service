@@ -17,6 +17,7 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import me.wideboard.core.job.UploadStatusJob;
+import timber.log.Timber;
 
 /**
  * Base class to subclass when creating upload tasks. It contains the logic common to all the tasks,
@@ -304,12 +305,12 @@ public abstract class UploadTask implements Runnable {
         public void run() {
           if (successfulUpload) {
             delegate.onCompleted(service, uploadInfo, response);
-            UploadStatusJob.scheduleJob(UploadStatusJob.UPLOAD_COMPLETED,
-                uploadInfo.getUploadId(), response.getBodyAsString());
+            //UploadStatusJob.scheduleJob(UploadStatusJob.UPLOAD_COMPLETED,
+            //    uploadInfo.getUploadId(), response.getBodyAsString());
           } else {
             delegate.onError(service, uploadInfo, response, null);
-            UploadStatusJob.scheduleJob(UploadStatusJob.UPLOAD_ERROR,
-                uploadInfo.getUploadId(), response.getBodyAsString());
+            //UploadStatusJob.scheduleJob(UploadStatusJob.UPLOAD_ERROR,
+            //    uploadInfo.getUploadId(), response.getBodyAsString());
           }
         }
       });
@@ -320,8 +321,9 @@ public abstract class UploadTask implements Runnable {
           .setServerResponse(response);
 
       service.sendBroadcast(data.getIntent());
-      UploadStatusJob.scheduleJob(UploadStatusJob.UPLOAD_COMPLETED,
-          uploadInfo.getUploadId(), response.getBodyAsString());
+      Timber.e("DELEGATE IS NULL");
+      //UploadStatusJob.scheduleJob(UploadStatusJob.UPLOAD_COMPLETED,
+      //    uploadInfo.getUploadId(), response.getBodyAsString());
     }
     service.taskCompleted(params.id);
   }
